@@ -11,7 +11,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/office/office.gltf')
+  const { nodes, materials } = useGLTF(process.env.PUBLIC_URL + '/office/office.gltf')
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -23,4 +23,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/office/office.gltf')
+useGLTF.preload(process.env.PUBLIC_URL + '/office/office.gltf')
